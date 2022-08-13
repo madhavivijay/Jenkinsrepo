@@ -23,7 +23,7 @@ pipeline {
         stage('TESTING') {
             parallel {
                 stage('TESTING1') {
-                    agent any
+                    agent { label 'javaproject1' }
                     steps {
                         sh 'echo "This is a TESTING1 stage"'
                         sh 'sleep 5'
