@@ -14,7 +14,7 @@ pipeline {
             }
         }
         stage('DEPLOY') {
-            agent { label 'javaproject1' } 
+            agent { label 'jslave' } 
             steps {
                 echo "This is a DEPLOY stage"
                 sh 'sleep 5'
@@ -23,14 +23,14 @@ pipeline {
         stage('TESTING') {
             parallel {
                 stage('TESTING1') {
-                    agent { label 'javaproject1' }
+                    agent { label 'jslave' }
                     steps {
                         sh 'echo "This is a TESTING1 stage"'
                         sh 'sleep 5'
                     }
                 }
                 stage('TESTING2') {
-                    agent { label 'cproject1' } 
+                    agent { label 'cslave' } 
                     steps {
                         sh '''
                             echo "This is a TESTING2 stage"
