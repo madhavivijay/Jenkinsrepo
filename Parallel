@@ -30,7 +30,7 @@ pipeline {
                     }
                 }
                 stage('TESTING2') {
-                    agent { label 'javaproject1' } 
+                    agent { label 'cproject1' } 
                     steps {
                         sh '''
                             echo "This is a TESTING2 stage"
