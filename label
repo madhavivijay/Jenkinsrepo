@@ -1,9 +1,10 @@
 pipeline {
-  agent ( label 'master' )
+  agent ( label 'cslave' )
   stages {
     stage ('build') { 
       steps {
       sh '''
+      #!/bin/bash
       pwd
       echo "this is a build stage"
      '''
