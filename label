@@ -17,5 +17,9 @@ pipeline {
      echo "this is a deploy stage"
    }
   }
+    stage ('test') {
+    agent { label 'jslave' }
+    steps {
+    echo "this is a testing stage"
  }
 }
