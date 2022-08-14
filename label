@@ -1,0 +1,20 @@
+pipeline {
+label ( label1 'master' )
+stages {
+  stage ('build') { 
+    steps {
+    sh '''
+    pwd
+    echo "this is a build stage"
+    '''
+   }
+  }
+  stage ('deploy') {
+    steps {
+    sh '
+    echo "this is a deploy stage"
+    '
+   }
+  }
+ }
+}
