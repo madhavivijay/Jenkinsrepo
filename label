@@ -1,7 +1,8 @@
 pipeline {
-  agent { label 'cslave' }
+  agent none
   stages {
     stage ('build') { 
+      ageny { label 'cslave' }
       steps {
       sh '''
       #!/bin/bash
@@ -12,6 +13,7 @@ pipeline {
   }
     stage ('deploy') {
       steps {
+      agent { label 'master' }
      echo "this is a deploy stage"
    }
   }
